@@ -1,0 +1,93 @@
+{
+  "name": "vs-workspace-themes",
+  "displayName": "vs-workspace-themes",
+  "description": "Simply get picky with colors and vibes of a vscode projects workspace themes",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "vscode": "^1.44.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:vs-workspace-theme.coral",
+    "onCommand:vs-workspace-theme.rose",
+    "onCommand:vs-workspace-theme.sand",
+    "onCommand:vs-workspace-theme.turquiose",
+    "onCommand:vs-workspace-theme.violet"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vs-workspace-theme.coral",
+        "title": "🗂️ VS Code Workspace Theme: Coral"
+      },
+      {
+        "command": "vs-workspace-theme.rose",
+        "title": "🗂️ VS Code Workspace Theme: Rose"
+      },
+      {
+        "command": "vs-workspace-theme.sand",
+        "title": "🗂️ VS Code Workspace Theme: Sand"
+      },
+      {
+        "command": "vs-workspace-theme.turquiose",
+        "title": "🗂️ VS Code Workspace Theme: Turquiose"
+      },
+      {
+        "command": "vs-workspace-theme.violet",
+        "title": "🗂️ VS Code Workspace Theme: Violet"
+      }
+    ]
+  },
+  "scripts": {
+    "------- BUILD --------------------------------": "",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch",
+    "------- TESTS --------------------------------": "",
+    "pretest": "yarn run compile && yarn run lint",
+    "test": "node ./out/test/runTest.js",
+    "------- HELPERS ------------------------------": "",
+    "lint": "eslint src --ext ts",
+    "prettier": "prettier --write ."
+  },
+  "lint-staged": {
+    "src/**/*.{ts}": [
+      "eslint . --fix",
+      "git add",
+      "prettier --write .",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "@types/vscode": "^1.44.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.6",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "mocha": "^7.1.1",
+    "prettier": "^2.0.4",
+    "typescript": "^3.8.3",
+    "vscode-test": "^1.3.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "ts-loader": "^6.2.2"
+  }
+}
