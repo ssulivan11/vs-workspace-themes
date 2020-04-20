@@ -11,6 +11,7 @@
     "Other"
   ],
   "activationEvents": [
+    "onCommand:vs-workspace-theme.formatOnSave",
     "onCommand:vs-workspace-theme.coral",
     "onCommand:vs-workspace-theme.rose",
     "onCommand:vs-workspace-theme.sand",
@@ -30,6 +31,10 @@
   },
   "contributes": {
     "commands": [
+      {
+        "command": "vs-workspace-theme.formatOnSave",
+        "title": "🗂️ VS Code Workspace formatOnSave: toggle"
+      },
       {
         "command": "vs-workspace-theme.coral",
         "title": "🗂️ VS Code Workspace Theme: Coral"

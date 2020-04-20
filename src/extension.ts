@@ -4,28 +4,47 @@ import themes from './themes';
 
 const { commands, workspace } = vscode;
 
-async function updateWorkspaceConfiguration(theme = 'sand') {
+async function updateWorkspaceConfiguration(isTheme: boolean, themeChange = 'sand' ) {
+
   if (!workspace.workspaceFolders) {
-    console.error('🗂️ No workspace found, please create one first!');
+    console.error('🗂️ No workspace found, please create one first');
     return;
   }
 
-  vscode.window.showInformationMessage(`🗂️ VS Code Workspace Theme: ${theme}`);
+  vscode.window.showInformationMessage(`🗂️ VS Code Workspace: ${themeChange}`);
 
-  return await workspace
+  if (isTheme === true) {
+    return await workspace
+      .getConfiguration()
+      .update(
+        'workbench.colorCustomizations',
+        themes[themeChange],
+        ConfigurationTarget.Workspace
+      );
+  }
+
+  if (themeChange === 'formatOnSave') {
+    return await workspace
     .getConfiguration()
     .update(
-      'workbench.colorCustomizations',
-      themes[theme],
+      'editor.formatOnSave',
+      !workspace.getConfiguration().editor.formatOnSave,
       ConfigurationTarget.Workspace
     );
+  }
+  console.error('🗂️ No invalid entry, please try again');
 }
 
 export function activate() {
-  for (let [key] of Object.entries(themes)) {
+  commands.registerCommand(
+    `vs-workspace-theme.formatOnSave`,
+    async () => await updateWorkspaceConfiguration(false, 'formatOnSave')
+  );
+
+  for (let [theme] of Object.entries(themes)) {
     commands.registerCommand(
-      `vs-workspace-theme.${key}`,
-      async () => await updateWorkspaceConfiguration(key)
+      `vs-workspace-theme.${theme}`,
+      async () => await updateWorkspaceConfiguration(true, theme)
     );
   }
 }
