@@ -32,7 +32,9 @@ async function updateWorkspaceConfiguration(isTheme: boolean, themeChange = 'san
       ConfigurationTarget.Workspace
     );
   }
+  
   console.error('🗂️ No invalid entry, please try again');
+  return;
 }
 
 export function activate() {

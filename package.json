@@ -12,7 +12,9 @@
   ],
   "activationEvents": [
     "onCommand:vs-workspace-theme.formatOnSave",
+    "onCommand:vs-workspace-theme.cerulean",
     "onCommand:vs-workspace-theme.coral",
+    "onCommand:vs-workspace-theme.lime",
     "onCommand:vs-workspace-theme.rose",
     "onCommand:vs-workspace-theme.sand",
     "onCommand:vs-workspace-theme.turquiose",
@@ -38,6 +40,14 @@
       {
         "command": "vs-workspace-theme.coral",
         "title": "🗂️ VS Code Workspace Theme: Coral"
+      },
+      {
+        "command": "vs-workspace-theme.cerulean",
+        "title": "🗂️ VS Code Workspace Theme: Cerulean"
+      },
+      {
+        "command": "vs-workspace-theme.lime",
+        "title": "🗂️ VS Code Workspace Theme: Lime"
       },
       {
         "command": "vs-workspace-theme.rose",

@@ -1,5 +1,3 @@
 # Change Log
 
-### VS-Workspace-Themes 1.0.0
-
-- Initial release
+Please follow updates on github [ssulivan11/vs-workspace-themes](https://github.com/ssulivan11/vs-workspace-themes/releases)

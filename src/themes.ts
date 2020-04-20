@@ -7,60 +7,38 @@ const defaults = {
   'statusBar.foreground': '#222'
 };
 
+const defaultTheme = ( hex: string ) => ({
+  ...defaults,
+  'activityBar.activeBorder': hex,
+  'activityBar.foreground': hex,
+  'activityBar.inactiveForeground': hex,
+  'activityBarBadge.background': hex,
+  'titleBar.inactiveBackground': hex,
+  'titleBar.activeForeground': hex,
+  'statusBar.background': hex,
+  'statusBarItem.hoverBackground': hex,
+})
+
 export default {
   turquiose: {
-    ...defaults,
-    'activityBar.activeBorder': '#45B8AC',
-    'activityBar.foreground': '#45B8AC',
-    'activityBar.inactiveForeground': '#45B8AC',
-    'activityBarBadge.background': '#45B8AC',
-    'titleBar.inactiveBackground': '#45B8AC',
-    'titleBar.activeForeground': '#45B8AC',
-    'statusBar.background': '#45B8AC',
-    'statusBarItem.hoverBackground': '#45B8AC',
+    ...defaultTheme('#45B8AC')
+  },
+  cerulean: {
+    ...defaultTheme('#98b4d4')
   },
   coral: {
-    ...defaults,
-    'activityBar.activeBorder': '#FF6F61',
-    'activityBar.foreground': '#FF6F61',
-    'activityBar.inactiveForeground': '#FF6F61',
-    'activityBarBadge.background': '#FF6F61',
-    'titleBar.inactiveBackground': '#FF6F61',
-    'titleBar.activeForeground': '#FF6F61',
-    'statusBar.background': '#FF6F61',
-    'statusBarItem.hoverBackground': '#FF6F61',
+    ...defaultTheme('#FF6F61')
+  },
+  lime: {
+    ...defaultTheme('#BFD641')
   },
   rose: {
-    ...defaults,
-    'activityBar.activeBorder': '#F7CAC9',
-    'activityBar.foreground': '#F7CAC9',
-    'activityBar.inactiveForeground': '#F7CAC9',
-    'activityBarBadge.background': '#F7CAC9',
-    'titleBar.inactiveBackground': '#F7CAC9',
-    'titleBar.activeForeground': '#F7CAC9',
-    'statusBar.background': '#F7CAC9',
-    'statusBarItem.hoverBackground': '#F7CAC9',
+    ...defaultTheme('#F7CAC9')
   },
   sand: {
-    ...defaults,
-    'activityBar.activeBorder': '#DFCFBE',
-    'activityBar.foreground': '#DFCFBE',
-    'activityBar.inactiveForeground': '#DFCFBE',
-    'activityBarBadge.background': '#DFCFBE',
-    'titleBar.inactiveBackground': '#DFCFBE',
-    'titleBar.activeForeground': '#DFCFBE',
-    'statusBar.background': '#DFCFBE',
-    'statusBarItem.hoverBackground': '#DFCFBE',
+    ...defaultTheme('#DFCFBE')
   },
   violet: {
-    ...defaults,
-    'activityBar.activeBorder': '#6B5B95',
-    'activityBar.foreground': '#6B5B95',
-    'activityBar.inactiveForeground': '#6B5B95',
-    'activityBarBadge.background': '#6B5B95',
-    'titleBar.inactiveBackground': '#6B5B95',
-    'titleBar.activeForeground': '#6B5B95',
-    'statusBar.background': '#6B5B95',
-    'statusBarItem.hoverBackground': '#6B5B95',
+    ...defaultTheme('#6B5B95')
   },
 };
