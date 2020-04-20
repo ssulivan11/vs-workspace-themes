@@ -2,7 +2,7 @@
   "name": "vs-workspace-themes",
   "displayName": "vs-workspace-themes",
   "description": "Simply get picky with colors and vibes of a vscode projects workspace themes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "scottsullivan",
   "engines": {
     "vscode": "^1.44.0"
