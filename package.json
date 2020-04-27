@@ -83,8 +83,10 @@
     "prettier": "prettier --write ."
   },
   "lint-staged": {
+    "*.{ts}": [
+      "eslint . --fix"
+    ],
     "*.{ts,json,md}": [
-      "eslint . --fix",
       "prettier --write ."
     ]
   },
@@ -113,6 +115,6 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "ts-loader": "^6.2.2"
+    "ts-loader": "^7.0.1"
   }
 }
