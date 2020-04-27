@@ -12,6 +12,7 @@
   ],
   "activationEvents": [
     "onCommand:vs-workspace-theme.formatOnSave",
+    "onCommand:vs-workspace-theme.wordWrap",
     "onCommand:vs-workspace-theme.cerulean",
     "onCommand:vs-workspace-theme.coral",
     "onCommand:vs-workspace-theme.lime",
@@ -38,7 +39,12 @@
     "commands": [
       {
         "command": "vs-workspace-theme.formatOnSave",
-        "title": "formatOnSave: toggle",
+        "title": "formatOnSave toggle",
+        "category": "🗂️ Workspace Theme"
+      },
+      {
+        "command": "vs-workspace-theme.wordWrap",
+        "title": "wordWrap toggle",
         "category": "🗂️ Workspace Theme"
       },
       {

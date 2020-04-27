@@ -14,7 +14,7 @@ async function updateWorkspaceConfiguration(
   }
 
   if (isTheme === true) {
-    vscode.window.showInformationMessage(`🗂️ VS Code - Theme: ${themeChange}`);
+    vscode.window.showInformationMessage(`🗂️ Workspace Theme: ${themeChange}`);
     console.warn(themeChange);
     console.log(themes(themeChange));
 
@@ -27,10 +27,24 @@ async function updateWorkspaceConfiguration(
       );
   }
 
+  if (themeChange === 'wordWrap') {
+    const isWordWrap = workspace.getConfiguration().editor.wordWrap === 'on';
+    vscode.window.showInformationMessage(
+      `🗂️ Workspace - wordWrap: ${isWordWrap}`
+    );
+    return await workspace
+      .getConfiguration()
+      .update(
+        'editor.wordWrap',
+        !isWordWrap ? 'on' : 'off',
+        ConfigurationTarget.Workspace
+      );
+  }
+
   if (themeChange === 'formatOnSave') {
     const isFormatOnSave = workspace.getConfiguration().editor.formatOnSave;
     vscode.window.showInformationMessage(
-      `🗂️ VS Code - formatOnSave: ${isFormatOnSave}`
+      `🗂️ Workspace - formatOnSave: ${isFormatOnSave}`
     );
     return await workspace
       .getConfiguration()
@@ -46,10 +60,13 @@ async function updateWorkspaceConfiguration(
 }
 
 export function activate() {
-  commands.registerCommand(
-    `vs-workspace-theme.formatOnSave`,
-    async () => await updateWorkspaceConfiguration(false, 'formatOnSave')
-  );
+  const otherCommands = ['formatOnSave', 'wordWrap'];
+  otherCommands.forEach((command) => {
+    commands.registerCommand(
+      `vs-workspace-theme.${command}`,
+      async () => await updateWorkspaceConfiguration(false, command)
+    );
+  });
 
   themeCommands.forEach((theme) => {
     commands.registerCommand(
