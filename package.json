@@ -83,7 +83,7 @@
     "prettier": "prettier --write ."
   },
   "lint-staged": {
-    "src/**/*.{ts}": [
+    "*.{ts,json,md}": [
       "eslint . --fix",
       "prettier --write ."
     ]
