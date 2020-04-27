@@ -4,8 +4,10 @@ import themes from './themes';
 
 const { commands, workspace } = vscode;
 
-async function updateWorkspaceConfiguration(isTheme: boolean, themeChange = 'sand' ) {
-
+async function updateWorkspaceConfiguration(
+  isTheme: boolean,
+  themeChange = 'sand'
+) {
   if (!workspace.workspaceFolders) {
     console.error('🗂️ No workspace found, please create one first');
     return;
@@ -25,14 +27,14 @@ async function updateWorkspaceConfiguration(isTheme: boolean, themeChange = 'san
 
   if (themeChange === 'formatOnSave') {
     return await workspace
-    .getConfiguration()
-    .update(
-      'editor.formatOnSave',
-      !workspace.getConfiguration().editor.formatOnSave,
-      ConfigurationTarget.Workspace
-    );
+      .getConfiguration()
+      .update(
+        'editor.formatOnSave',
+        !workspace.getConfiguration().editor.formatOnSave,
+        ConfigurationTarget.Workspace
+      );
   }
-  
+
   console.error('🗂️ No invalid entry, please try again');
   return;
 }
