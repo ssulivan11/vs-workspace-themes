@@ -103,7 +103,6 @@
   "scripts": {
     "------- BUILD --------------------------------": "",
     "watch": "tsc -watch -p ./",
-    "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
     "webpack": "webpack --mode development",
     "webpack-dev": "webpack --mode development --watch",
@@ -112,7 +111,10 @@
     "test": "node ./out/test/runTest.js",
     "------- HELPERS ------------------------------": "",
     "lint": "eslint src --ext ts",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "------- VSCODE ------------------------------": "",
+    "vscode:prepublish": "yarn run compile",
+    "publish": "vsce publish"
   },
   "lint-staged": {
     "*.{ts}": [
