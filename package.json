@@ -13,13 +13,17 @@
   ],
   "activationEvents": [
     "onCommand:vs-workspace-theme.formatOnSave",
+    "onCommand:vs-workspace-theme.wordWrap",
     "onCommand:vs-workspace-theme.cerulean",
     "onCommand:vs-workspace-theme.coral",
     "onCommand:vs-workspace-theme.lime",
+    "onCommand:vs-workspace-theme.tangerine",
     "onCommand:vs-workspace-theme.rose",
     "onCommand:vs-workspace-theme.sand",
+    "onCommand:vs-workspace-theme.snow",
     "onCommand:vs-workspace-theme.turquiose",
-    "onCommand:vs-workspace-theme.violet"
+    "onCommand:vs-workspace-theme.violet",
+    "onCommand:vs-workspace-theme.random"
   ],
   "repository": {
     "type": "git",
@@ -36,35 +40,63 @@
     "commands": [
       {
         "command": "vs-workspace-theme.formatOnSave",
-        "title": "🗂️ VS Code Workspace formatOnSave: toggle"
+        "title": "formatOnSave toggle",
+        "category": "🗂️ Workspace Theme"
+      },
+      {
+        "command": "vs-workspace-theme.wordWrap",
+        "title": "wordWrap toggle",
+        "category": "🗂️ Workspace Theme"
       },
       {
         "command": "vs-workspace-theme.coral",
-        "title": "🗂️ VS Code Workspace Theme: Coral"
+        "title": "Coral",
+        "category": "🗂️ Workspace Theme"
       },
       {
         "command": "vs-workspace-theme.cerulean",
-        "title": "🗂️ VS Code Workspace Theme: Cerulean"
+        "title": "Cerulean",
+        "category": "🗂️ Workspace Theme"
       },
       {
         "command": "vs-workspace-theme.lime",
-        "title": "🗂️ VS Code Workspace Theme: Lime"
+        "title": "Lime",
+        "category": "🗂️ Workspace Theme"
+      },
+      {
+        "command": "vs-workspace-theme.tangerine",
+        "title": "tangerine",
+        "category": "🗂️ Workspace Theme"
       },
       {
         "command": "vs-workspace-theme.rose",
-        "title": "🗂️ VS Code Workspace Theme: Rose"
+        "title": "Rose",
+        "category": "🗂️ Workspace Theme"
+      },
+      {
+        "command": "vs-workspace-theme.snow",
+        "title": "Snow",
+        "category": "🗂️ Workspace Theme"
       },
       {
         "command": "vs-workspace-theme.sand",
-        "title": "🗂️ VS Code Workspace Theme: Sand"
+        "title": "Sand",
+        "category": "🗂️ Workspace Theme"
       },
       {
         "command": "vs-workspace-theme.turquiose",
-        "title": "🗂️ VS Code Workspace Theme: Turquiose"
+        "title": "Turquiose",
+        "category": "🗂️ Workspace Theme"
       },
       {
         "command": "vs-workspace-theme.violet",
-        "title": "🗂️ VS Code Workspace Theme: Violet"
+        "title": "Violet",
+        "category": "🗂️ Workspace Theme"
+      },
+      {
+        "command": "vs-workspace-theme.random",
+        "title": "Random",
+        "category": "🗂️ Workspace Theme"
       }
     ]
   },
