@@ -7,6 +7,7 @@
   "engines": {
     "vscode": "^1.44.0"
   },
+  "license": "MIT",
   "categories": [
     "Other"
   ],
@@ -107,18 +108,18 @@
     "webpack": "webpack --mode development",
     "webpack-dev": "webpack --mode development --watch",
     "------- TESTS --------------------------------": "",
-    "pretest": "yarn run compile && yarn run lint",
+    "pretest": "yarn run compile",
     "test": "node ./out/test/runTest.js",
     "------- HELPERS ------------------------------": "",
     "lint": "eslint src --ext ts",
     "prettier": "prettier --write ."
   },
   "lint-staged": {
-    "src/**/*.{ts}": [
-      "eslint . --fix",
-      "git add",
-      "prettier --write .",
-      "git add"
+    "*.{ts}": [
+      "eslint . --fix"
+    ],
+    "*.{ts,json,md}": [
+      "prettier --write ."
     ]
   },
   "husky": {
@@ -145,6 +146,6 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "ts-loader": "^6.2.2"
+    "ts-loader": "^7.0.1"
   }
 }

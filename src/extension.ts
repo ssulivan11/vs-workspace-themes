@@ -15,9 +15,6 @@ async function updateWorkspaceConfiguration(
 
   if (isTheme === true) {
     vscode.window.showInformationMessage(`🗂️ Workspace Theme: ${themeChange}`);
-    console.warn(themeChange);
-    console.log(themes(themeChange));
-
     return await workspace
       .getConfiguration()
       .update(
