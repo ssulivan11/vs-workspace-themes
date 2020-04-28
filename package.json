@@ -76,7 +76,7 @@
     "webpack": "webpack --mode development",
     "webpack-dev": "webpack --mode development --watch",
     "------- TESTS --------------------------------": "",
-    "pretest": "yarn run compile && yarn run lint",
+    "pretest": "yarn run compile",
     "test": "node ./out/test/runTest.js",
     "------- HELPERS ------------------------------": "",
     "lint": "eslint src --ext ts",
