@@ -31,11 +31,7 @@ async function updateWorkspaceConfiguration(
     );
     return await workspace
       .getConfiguration()
-      .update(
-        'editor.wordWrap',
-        !isWordWrap ? 'on' : 'off',
-        ConfigurationTarget.Workspace
-      );
+      .update('editor.wordWrap', isWordWrap, ConfigurationTarget.Workspace);
   }
 
   if (themeChange === 'formatOnSave') {
@@ -47,7 +43,7 @@ async function updateWorkspaceConfiguration(
       .getConfiguration()
       .update(
         'editor.formatOnSave',
-        !isFormatOnSave,
+        isFormatOnSave,
         ConfigurationTarget.Workspace
       );
   }
